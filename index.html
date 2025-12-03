@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>The gilded spoon bistro restaurant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: #f8f9fa; /* Light background for a restaurant feel */
+            color: #343a40; /* Dark text for readability */
+        }
+
+        header {
+            background: #dc3545; /* Red header for a warm feel */
+            color: white;
+            padding: 25px 15px;
+            text-align: left;
+        }
+
+        nav {
+            background: #dc3545; /* Consistent navigation color */
+            text-align: left;
+            padding: 12px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 18px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        section {
+            background: white;
+            padding: 18px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #dc3545; /* Red color for headings */
+        }
+
+        /* Menu Grid */
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px;
+        }
+
+        .dish {
+            background: #f8d7da; /* Light red background for dishes */
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #f5c6cb; /* Soft border */
+        }
+
+        .dish img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .price {
+            font-weight: bold;
+            margin-top: 6px;
+            color: #dc3545; /* Price in red */
+        }
+
+        .btn {
+            background: #dc3545; /* Button color */
+            color: white;
+            padding: 9px 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        /* Form */
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ced4da; /* Light border for inputs */
+            border-radius: 4px;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery img {
+            height: 260px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #dc3545; /* Footer color */
+            color: white;
+            margin-top: 20px;
+        }
+
+        @media(max-width:450px){
+            header h1 { font-size: 1.4rem; }
+            .gallery img { height: 120px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>The gilded spoon bistro restaurant</h1>
+    <p>Taste all dishes in the world</p>
+</header>
+
+<nav>
+    <a href="#menu">Menu</a>
+    <a href="#reservation">Reservation</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+</nav>
+
+<main>
+
+    <!-- MENU SECTION -->
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <p>Exquisite dishes crafted with finest ingredients.</p>
+
+        <div class="menu-container">
+
+            <div class="dish">
+            <img src="spiced curry delight.png" alt="dish">
+            <h3>Spiced Curry Delight</h3>
+            <p>Aromatic vegetable curry with basmati rice and naan bread</p>
+            <p class="price">₹299</p>
+            <button class="btn" onclick="location.href='#reservation'">Order Now</button>
+            </div>
+
+            <div class="dish">
+            <img src="paneer butter masala.png" alt="dish">
+            <h3>Paneer Tikka Masala</h3>
+            <p>Grilled cottage cheese cubes in creamy tomato sauce with rice</p>
+            <p class="price">₹499</p>
+            <button class="btn" onclick="location.href='#reservation'">Order Now</button>
+            </div>
+
+            <div class="dish">
+            <img src="biryani.png" alt="dish">
+            <h3>Vegetable Biryani</h3>
+            <p>Fragrant basmati rice with fresh vegetables and aromatic spices</p>
+            <p class="price">₹349</p>
+            <button class="btn" onclick="location.href='#reservation'">Order Now</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- RESERVATION FORM -->
+    <section id="reservation">
+        <h2>Make a Reservation</h2>
+        <p>Reserve your table and enjoy a memorable dining experience.</p>
+
+        <form onsubmit="alert('Your reservation is confirmed!'); return false;">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your Name" required>
+
+            <label>Email</label>
+            <input type="email" placeholder="you@example.com" required>
+
+            <label>Select Dish</label>
+            <select>
+                <option>Spiced Curry Delight</option>
+                <option>Grilled Steak Special</option>
+                <option>Seafood Platter</option>
+            </select>
+
+            <label>Number of Guests</label>
+            <input type="number" min="1" value="1">
+
+            <label>Reservation Date & Time</label>
+            <input type="datetime-local">
+
+            <label>Special Requests</label>
+            <textarea placeholder="Any dietary preferences or special requests..."></textarea>
+
+            <button class="btn" type="submit">Reserve Table</button>
+        </form>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2>About Us</h2>
+        <ol>
+            <li>We source only premium, fresh ingredients daily.</li>
+            <li>Our chefs have international culinary expertise.</li>
+            <li>We offer both dine-in and takeout services.</li>
+            <li>Special menus available for dietary requirements.</li>
+        </ol>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+        <h2>Restaurant Gallery</h2>
+
+        <div class="gallery">
+            <img src="img1.png">
+            <img src="img2.png">
+            <img src="img3.png">
+            <img src="img4.png">
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>The gilded spoon bistro restaurant • Contact: gildedspoon@restaurant.com</p>
+    <p>© 2025 The Gilded Spoon Bistro Co.</p>
+</footer>
+
+</body>
+</html>
